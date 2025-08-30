@@ -55,11 +55,13 @@ time:
 text_sensor:
   - platform: wifi_info
     ip_address:
-      name: Power Relays IP
+      name: ${friendly_name} IP
+      update_interval: 1h
     ssid:
-      name: Power Relays SSID
+      name: ${friendly_name} SSID
+      update_interval: 1h
     mac_address:
-      name: Power Relays Mac
+      name: ${friendly_name} Mac
 #---------------------------------------------------------------------------------------------------
 i2c:
   sda: GPIO10 #SD3 Yellow
@@ -67,12 +69,12 @@ i2c:
 #---------------------------------------------------------------------------------------------------
 sensor:
   - platform: wifi_signal
-    name: "Power Relays Signal Strength"
+    name: "${friendly_name} Signal Strength"
     update_interval: 60s
 #---------------------------------------------------------------------------------------------------
 switch:
   - platform: restart
-    name: "Power Relays Restart"
+    name: "${friendly_name} Restart"
 #--------------------------------------
   - platform: gpio
     pin: GPIO5 #D1
